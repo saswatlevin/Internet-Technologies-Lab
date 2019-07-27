@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Bouncing Ball</title>
+    <script type="text/javascript">
+
+        var context, c;
+        var x = 250;
+        var y = 0;
+        var dy = 5;
+        var direction = 1;
+
+        function draw()
+        {
+           
+            context.beginPath();
+            context.fillStyle = "#ad3d3d3";
+            context.arc(x, y, 20, 0, Math.PI * 2, true);
+            context.clearRect(0, 0, 500, 500);
+            context.stroke();
+
+            if (direction)
+            {
+                if (y < 500)
+                {
+                    y += 5;
+                }
+
+                else {
+                    direction = 0;
+                }
+            }
+
+            else {
+                if (y > 0)
+                {
+                    y -= dy;
+                }
+                else {
+                    direction = 1;
+                }
+            }
+        }
+
+        function init()
+        {
+            c = document.getElementById("myCanvas");
+            context = myCanvas.getContext("2d");
+            setInterval(draw, 10);
+        }
+        
+    </script>
+</head>
+<body onload="init();">
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+   
+</body>
+</html>

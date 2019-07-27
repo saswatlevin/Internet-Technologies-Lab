@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login to your account</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function Validate()
+        {
+            var u = document.getElementById("txt_Name").value;
+            if (u == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    
+        <form>
+            
+            <table>
+                <tr>
+               <td> Username</td>
+               <td><input type="text" class="textBox" id="txt_Name" name="username" /></td>
+               </tr>
+           
+                <tr>
+                <td>Password</td>
+                <td><input type="password" class="textBox" id="txt_Password" name="password"/></td>
+                </tr>
+               
+         
+                <tr>            
+                <td colspan="2"><input type="submit" id="btn_submit" value="submit" name="submit_button" onclick="return Validate()"/></td>
+                </tr>
+           </table>
+         </form>
+
+</body>
+</html>

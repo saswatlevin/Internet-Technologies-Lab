@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Get Element Position</title>
+    <link href="styles.css" rel="stylesheet" />
+   <script type="text/javascript" >
+       function displayCoords() {
+           var p = document.getElementById("txtTest");
+           var p_element = p.getBoundingClientRect();
+           console.log("top=" + p_element.top + "right=" + p_element.right + "bottom=" + p_element.bottom + "left="+p_element.left);
+       }
+</script>
+
+</head>
+<body>
+    <p id="txtTest" onclick="displayCoords()">Test this</p>
+</body>
+</html>
