@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Login to your account</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function Validate()
+        {
+            var u = document.getElementById("txt_Name").value;
+            if (u == "")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    
+        <form>
+            
+            <table>
+                <tr>
+               <td> Department Name</td>
+               <td><input type="text" class="textBox" id="txtDeptName" name="deptname" /></td>
+               </tr>
+               
+               <td> Department Type</td>
+               <td><input type="text" class="textBox" id="txtDeptType" name="depttype" /></td>
+               </tr>
+               
+               <td> Subjects</td>
+               <td><input type="checkbox" class="checkBox" id="txtSub1" name="DS" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub2" name="OOP" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub3" name="SCLD" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub4" name="COD" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub5" name="FLAT" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub6" name="DBS" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub7" name="DAA" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub8" name="EM-III" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub9" name="EM-IV" /></td>
+               <td><input type="checkbox" class="checkBox" id="txtSub10" name="SE" /></td>
+               </tr>
+               
+              
+               
+               
+         
+                <tr>            
+                <td colspan="2"><input type="submit" id="btn_submit" value="submit" name="submit_button" onclick="return Validate()"/></td>
+                </tr>
+           </table>
+         </form>
+
+</body>
+</html>
