@@ -15,7 +15,7 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        string query = "SELECT staffid FROM dbo.house";
+        string query = "SELECT staffid,firstname,lastname,dno,street,city,zipcode FROM dbo.house";
         if (!IsPostBack)
         {
             LBNotify.Items.Add("Delhi");
@@ -75,7 +75,7 @@ public partial class _Default : System.Web.UI.Page
 
         try
         {
-            string query = "SELECT staffid FROM dbo.house";
+            string query = "SELECT staffid,firstname,lastname,dno,street,city,zipcode FROM dbo.house";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, connection))
@@ -119,11 +119,12 @@ public partial class _Default : System.Web.UI.Page
         try
             {
 
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
+            //for (int i= 0;i < ds.Tables[0].Rows.Count;++i)
+            //{
 
-                lbl_Display.Text += ds.Tables["dbo.house"].Rows[0]["staffid"].ToString() + "<br />";
-            }
+          lbl_Display.Text+=   ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["staffid"].ToString()+ "<br/>" + ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["firstname"].ToString()+ "<br/>" + ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["lastname"].ToString() + "<br/>" + ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["dno"].ToString()+ "<br/>" + ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["street"].ToString()+ "<br/>" + ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["city"].ToString()+ "<br/>" +  ds.Tables[0].Rows[Convert.ToInt32(DDLStaffId.SelectedIndex)]["zipcode"].ToString()+ "<br/>";
+
+            //}
             //Response.Write("\n Selected");
             }
             catch (Exception ex)
