@@ -68,26 +68,24 @@ public partial class _Default : System.Web.UI.Page
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query_name_select = "SELECT name,age FROM dbo.test WHERE category=@category";
+                string query_name_select = "SELECT name,age,category FROM dbo.test WHERE category=@category";
                 using (SqlCommand cmd = new SqlCommand(query_name_select, connection))
                 {
+                    cmd.Parameters.AddWithValue("@category", DDLGenre.SelectedItem.Value.ToString());
+
                     connection.Open();
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        cmd.Parameters.AddWithValue("@category", DDLGenre.SelectedItem.Value.ToString());
-                       
+                        
                         while (reader.Read())
                         {
-                            string name = (string)reader["name"];
-                           
-                            string age = (string)reader["age"];
 
-                            lbl_view_area.Text += "Name " + name + "<br/>" + "Age " + "<br/>" + age;
 
-                            /*if(category==LBActors.SelectedItem.Value.ToString())
+                        lbl_view_area.Text += "Name " + reader.GetString(0) + "\t" + "Age " + reader.GetString(1) +"\t"+ "Category "+  reader.GetString(2);
+                                if(reader.GetString(2)==DDLGenre.SelectedItem.Value.ToString())
                              {
                                  DDLGenre_SelectedIndexChanged(sender,e);
-                             }*/
+                             }
                         }
                     }
                 }
