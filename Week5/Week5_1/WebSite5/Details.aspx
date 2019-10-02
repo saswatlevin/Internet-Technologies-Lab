@@ -11,7 +11,7 @@
     <div>
         <asp:Label ID="lbl_view_area" runat="server" />
         <asp:Button ID="btn_goback" runat="server" Text="Go Back" OnClick="btn_goback_Click"/>
-    
+        
     </div>
     </form>
 </body>
